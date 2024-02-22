@@ -55,7 +55,7 @@ func UrlRequester(wg *sync.WaitGroup, urlsChannel <-chan string) {
     defer wg.Done()
     for url := range urlsChannel {
         getUrl(url)
-        time.Sleep(time.Duration(900 + rand.Intn(201)) * time.Millisecond)
+        time.Sleep(time.Duration(700 + rand.Intn(201)) * time.Millisecond)
     }
     fmt.Println("Stopping worker")
 }
